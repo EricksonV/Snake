@@ -1,0 +1,16 @@
+C:\Users\villa\Desktop\5to_Semestre\Programación_III\Tareas\Proyecto\Snake-Dayana-Erickson\bin\Debug\net5.0\Snake-Dayana-Erickson.exe
+C:\Users\villa\Desktop\5to_Semestre\Programación_III\Tareas\Proyecto\Snake-Dayana-Erickson\bin\Debug\net5.0\Snake-Dayana-Erickson.deps.json
+C:\Users\villa\Desktop\5to_Semestre\Programación_III\Tareas\Proyecto\Snake-Dayana-Erickson\bin\Debug\net5.0\Snake-Dayana-Erickson.runtimeconfig.json
+C:\Users\villa\Desktop\5to_Semestre\Programación_III\Tareas\Proyecto\Snake-Dayana-Erickson\bin\Debug\net5.0\Snake-Dayana-Erickson.runtimeconfig.dev.json
+C:\Users\villa\Desktop\5to_Semestre\Programación_III\Tareas\Proyecto\Snake-Dayana-Erickson\bin\Debug\net5.0\Snake-Dayana-Erickson.dll
+C:\Users\villa\Desktop\5to_Semestre\Programación_III\Tareas\Proyecto\Snake-Dayana-Erickson\bin\Debug\net5.0\ref\Snake-Dayana-Erickson.dll
+C:\Users\villa\Desktop\5to_Semestre\Programación_III\Tareas\Proyecto\Snake-Dayana-Erickson\bin\Debug\net5.0\Snake-Dayana-Erickson.pdb
+C:\Users\villa\Desktop\5to_Semestre\Programación_III\Tareas\Proyecto\Snake-Dayana-Erickson\obj\Debug\net5.0\Snake-Dayana-Erickson.csprojAssemblyReference.cache
+C:\Users\villa\Desktop\5to_Semestre\Programación_III\Tareas\Proyecto\Snake-Dayana-Erickson\obj\Debug\net5.0\Snake-Dayana-Erickson.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\villa\Desktop\5to_Semestre\Programación_III\Tareas\Proyecto\Snake-Dayana-Erickson\obj\Debug\net5.0\Snake-Dayana-Erickson.AssemblyInfoInputs.cache
+C:\Users\villa\Desktop\5to_Semestre\Programación_III\Tareas\Proyecto\Snake-Dayana-Erickson\obj\Debug\net5.0\Snake-Dayana-Erickson.AssemblyInfo.cs
+C:\Users\villa\Desktop\5to_Semestre\Programación_III\Tareas\Proyecto\Snake-Dayana-Erickson\obj\Debug\net5.0\Snake-Dayana-Erickson.csproj.CoreCompileInputs.cache
+C:\Users\villa\Desktop\5to_Semestre\Programación_III\Tareas\Proyecto\Snake-Dayana-Erickson\obj\Debug\net5.0\Snake-Dayana-Erickson.dll
+C:\Users\villa\Desktop\5to_Semestre\Programación_III\Tareas\Proyecto\Snake-Dayana-Erickson\obj\Debug\net5.0\ref\Snake-Dayana-Erickson.dll
+C:\Users\villa\Desktop\5to_Semestre\Programación_III\Tareas\Proyecto\Snake-Dayana-Erickson\obj\Debug\net5.0\Snake-Dayana-Erickson.pdb
+C:\Users\villa\Desktop\5to_Semestre\Programación_III\Tareas\Proyecto\Snake-Dayana-Erickson\obj\Debug\net5.0\Snake-Dayana-Erickson.genruntimeconfig.cache

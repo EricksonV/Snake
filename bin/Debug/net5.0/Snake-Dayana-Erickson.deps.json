@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "Snake-Dayana-Erickson/1.0.0": {
+        "runtime": {
+          "Snake-Dayana-Erickson.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Snake-Dayana-Erickson/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

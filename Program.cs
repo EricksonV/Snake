@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Snake_Dayana_Erickson.Clases.GameSnake;
+using System;
 
 namespace Snake_Dayana_Erickson
 {
@@ -6,7 +7,7 @@ namespace Snake_Dayana_Erickson
     {
         static void Main(string[] args)
         {
-            
+            new clsGameSnake().Game();
         }
     }
 }
