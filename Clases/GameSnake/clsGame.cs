@@ -13,7 +13,7 @@ namespace Snake_Dayana_Erickson.Clases.GameSnake
         {
             Abajo, Izquierda, Derecha, Arriba
         }
-        private void DibujaPantalla(Size size)
+        public void DibujaPantalla(Size size)
         {
             Console.Title = "Culebrita comelona";
             Console.WindowHeight = size.Height + 2;
@@ -35,7 +35,7 @@ namespace Snake_Dayana_Erickson.Clases.GameSnake
             }
         }//end DibujaPantalla
 
-        private void MuestraPunteo(int punteo)
+        public void MuestraPunteo(int punteo)
         {
             Console.BackgroundColor = ConsoleColor.White;
             Console.ForegroundColor = ConsoleColor.Black;
@@ -43,7 +43,7 @@ namespace Snake_Dayana_Erickson.Clases.GameSnake
             Console.Write($"Puntuación: {punteo.ToString("00000000")}");
         }//end Muestra Punteo
 
-        private Direction ObtieneDireccion(Direction direccionAcutal)
+        public Direction ObtieneDireccion(Direction direccionAcutal)
         {
             if (!Console.KeyAvailable) return direccionAcutal;
 
@@ -70,7 +70,7 @@ namespace Snake_Dayana_Erickson.Clases.GameSnake
             return direccionAcutal;
         }//end obtieneDireccion
 
-        private Point ObtieneSiguienteDireccion(Direction direction, Point currentPosition)
+        public Point ObtieneSiguienteDireccion(Direction direction, Point currentPosition)
         {
             Point siguienteDireccion = new Point(currentPosition.X, currentPosition.Y);
             switch (direction)
@@ -90,5 +90,21 @@ namespace Snake_Dayana_Erickson.Clases.GameSnake
             }
             return siguienteDireccion;
         }// end ObtieneSiguienteDireccion
+
+        public void DeclaraciondeVariables()
+        {
+            var punteo = 0;
+            var velocidad = 100; //modificar estos valores y ver qué pasa
+            var posiciónComida = Point.Empty;
+            var tamañoPantalla = new Size(60, 20);
+            var culebrita = new Queue<Point>();
+            var longitudCulebra = 3; //modificar estos valores y ver qué pasa
+            var posiciónActual = new Point(20, 9); //modificar estos valores y ver qué pasa
+            culebrita.Enqueue(posiciónActual);
+            var dirección = Direction.Derecha; //modificar estos valores y ver qué pasa
+
+            DibujaPantalla(tamañoPantalla);
+            MuestraPunteo(punteo);
+        }
     }
 }

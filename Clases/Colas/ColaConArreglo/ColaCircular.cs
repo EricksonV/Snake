@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -83,6 +84,33 @@ namespace Colas.Clases.ColaArreglo
             {
                 throw new Exception("Cola Vacía");
             }
+        }
+        public bool Any(Point x)
+        {
+            int i = 0, cont = 0;
+            bool flag;
+            while (i <= fin)
+            {
+                Point a = (Point)listaCola[i];
+                flag = ((a.X != x.X) && (a.Y != x.Y));
+                int z = (flag == true) ? cont+0 : cont++;
+                i++;
+            }
+            return (cont == 0) ? true : false;
+        }
+
+        public bool all(int x, int y)
+        {
+            int i = 0, cont = 0;
+            bool flag;
+            while (i <= fin)
+            {
+                Point a = (Point)listaCola[i];
+                flag = (a.X != x || a.Y != y);
+                int z = (flag == true) ? cont + 0 : cont++;
+                i++;
+            }
+            return (cont == 0) ? true : false;
         }
     }
 }

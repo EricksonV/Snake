@@ -1,6 +1,7 @@
 ﻿using Colas.Clases.ColaLista;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -117,5 +118,6 @@ namespace Colas.Clases.BicolaEnlazada
             }
             return n;
         }
+
     }
 }

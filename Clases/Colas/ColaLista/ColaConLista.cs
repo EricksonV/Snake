@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -73,6 +74,42 @@ namespace Colas.Clases.ColaLista
             }
             return (frente.elemento);
         }
+        public bool any(Point x)
+        {
+            int cont = 0;
+            bool flag;
+            Point a;
+            Nodo aux = frente; //Se guardan los datos en un nodo auxiliar
+            while (aux != null)
+            {
+                
+                a = (Point)aux.elemento; //se convierte el elemento a tipo Point
+                flag = ((a.X != x.X) && (a.Y != x.Y)); //compara que la posicion sea distinta a la que ocupa la serpiente
+                int z = (flag == true ? cont+0 : cont++); //comparación que no hayan datos repetidos
+                aux = aux.Siguiente; //avanza al siguiente nodo
+            }
+
+            return (cont == 0) ? true : false;
+        }
+
+        public bool all(int x, int y)
+        {
+            int cont = 0;
+            bool flag;
+            Point a;
+            Nodo aux = frente; //Se guardan los datos en un nodo auxiliar
+            while (aux != null)
+            {
+
+                a = (Point)aux.elemento; //se convierte el elemento a tipo Point
+                flag = (a.X != x || a.Y != y);
+                int z = (flag == true ? cont + 0 : cont++); //comparación que no hayan datos repetidos
+                aux = aux.Siguiente; //avanza al siguiente nodo
+            }
+
+            return (cont == 0) ? true : false;
+        }
+
 
     }
 }
