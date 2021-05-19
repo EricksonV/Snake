@@ -75,41 +75,58 @@ namespace Snake_Dayana_Erickson.Clases.GameMenu
             {
                 case 0:
                     op3 = seleccion(3, 4);
-                    SwitchMenu3(op3);
+                    SwitchMenu3(op3, op2);
                     break;
                 case 1:
                     op3 = seleccion(3, 4);
-                    SwitchMenu3(op3);
+                    SwitchMenu3(op3, op2);
                     break;
                 case 2:
                     op3 = seleccion(3, 4);
-                    SwitchMenu3(op3);
+                    SwitchMenu3(op3, op2);
                     break;
             }
         }
-        public void SwitchMenu3(int op3)
+        public void SwitchMenu3(int op3, int v)
         {
+            int velocidad;
+            if (v == 0) { velocidad = 125; }
+            else if (v == 1) { velocidad = 100; }
+            else { velocidad = 70; }
+
+            Console.SetCursorPosition(15, 14);
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.Write("INGRESE SU NOMBRE:  ");
+            Console.ForegroundColor = ConsoleColor.Red;
+            string name = Console.ReadLine();
+            int puntos;
+            
             switch (op3)
             {
                 case 0:
-                    Console.WriteLine("Bicola");
-                    Console.ReadKey();
+                    SnakeBicola obj1 = new SnakeBicola();
+                    obj1.Velocidad = velocidad;
+                    obj1.Game();
                     break;
                 case 1:
-                    Console.WriteLine("circular");
-                    Console.ReadKey();
+                    SnakeColaCircular circular = new SnakeColaCircular();
+                    circular.Velocidad = velocidad;
+                    circular.Game();
                     break;
                 case 2:
-                    Console.WriteLine("circular v2");
-                    Console.ReadKey();
+                    SnakeColaCircularV2 circularV2 = new SnakeColaCircularV2();
+                    circularV2.Velocidad = velocidad;
+                    circularV2.Game();
                     break;
                 case 3:
-                    Console.WriteLine("Con lista");
-                    Console.ReadKey();
+                    SnakeColaConLista list = new SnakeColaConLista();
+                    list.Velocidad = velocidad;
+                    list.Game();
                     break;
                 case 4:
-                    Console.WriteLine("Lineal");
-                    Console.ReadKey();
+                    SnakeColaLineal lineal = new SnakeColaLineal();
+                    lineal.Velocidad = velocidad;
+                    lineal.Game();
                     break;
             }
         }

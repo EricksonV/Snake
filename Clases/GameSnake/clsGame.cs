@@ -18,7 +18,7 @@ namespace Snake_Dayana_Erickson.Clases.GameSnake
         private object dirección = Direction.Derecha; //modificar estos valores y ver qué pasa
 
         public object Punteo { get => punteo; }
-        public object Velocidad { get => velocidad; }
+        public object Velocidad { get => velocidad; set => velocidad = value; }
         public object PosiciónComida { get => posiciónComida; }
         public object TamañoPantalla { get => tamañoPantalla;}
         public object LongitudCulebra { get => longitudCulebra; }

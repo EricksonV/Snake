@@ -2,30 +2,26 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
 using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace Snake_Dayana_Erickson.Clases.GameSnake
 {
-    class SnakeColaCircularV2 : clsGame
+    class SnakeColaLineal : clsGame
     {
-        private bool MoverLaCulebrita(ColaCircular culebra, Point posiciónObjetivo,
-            int longitudCulebra, Size screenSize)
+        private bool MoverLaCulebrita(ColaLineal culebra, Point posiciónObjetivo, int longitudCulebra, Size screenSize) 
         {
-            var lastPoint = (Point)culebra.finalCola(); //Obtenemos el fin de la cola
+            var lastPoint = (Point)culebra.finCola();
 
             if (lastPoint.Equals(posiciónObjetivo)) return true;
 
             if (culebra.Any(posiciónObjetivo)) return false;
 
-            else if (posiciónObjetivo.X < 0 || posiciónObjetivo.X >= screenSize.Width
-                    || posiciónObjetivo.Y < 0 || posiciónObjetivo.Y >= screenSize.Height)
+            if(posiciónObjetivo.X < 0 || posiciónObjetivo.X >= screenSize.Width
+                 || posiciónObjetivo.Y < 0 || posiciónObjetivo.Y >= screenSize.Height) 
             {
                 return false;
             }
-
 
             Console.BackgroundColor = ConsoleColor.Green;
             Console.SetCursorPosition(lastPoint.X + 1, lastPoint.Y + 1);
@@ -40,16 +36,17 @@ namespace Snake_Dayana_Erickson.Clases.GameSnake
             // Quitar cola
             if (culebra.cont() > longitudCulebra)
             {
-                var removePoint = (Point)culebra.quitar2();
-                Console.BackgroundColor = ConsoleColor.Black;
+                var removePoint = (Point)culebra.quitar();
+                Console.BackgroundColor = ConsoleColor.White;
                 Console.SetCursorPosition(removePoint.X + 1, removePoint.Y + 1);
                 Console.Write(" ");
+                culebra.borrarCola();
             }
 
             return true;
         }//end MoverLaCulebrita
 
-        private Point MostrarComida(Size screenSize, ColaCircular culebra)
+        private Point MostrarComida(Size screenSize, ColaLineal culebra) 
         {
             var lugarComida = Point.Empty;
             var cabezaCulebra = (Point)culebra.frenteCola(); //obtenemos la posicion de la cabeza de la serpiente
@@ -58,7 +55,7 @@ namespace Snake_Dayana_Erickson.Clases.GameSnake
             {
                 var x = rnd.Next(0, screenSize.Width - 1);
                 var y = rnd.Next(0, screenSize.Height - 1);
-                if (culebra.all(x, y)
+                if (culebra.All(x, y)
                     && Math.Abs(x - cabezaCulebra.X) + Math.Abs(y - cabezaCulebra.Y) > 8)
                 {
                     lugarComida = new Point(x, y);
@@ -72,7 +69,8 @@ namespace Snake_Dayana_Erickson.Clases.GameSnake
 
             return lugarComida;
         }//end MostrarComida
-        public int Game()
+
+        public int Game() 
         {
             int punteo = (int)Punteo;
             int velocidad = (int)Velocidad;
@@ -81,7 +79,7 @@ namespace Snake_Dayana_Erickson.Clases.GameSnake
             int longitudCulebra = (int)LongitudCulebra;
             Point posiciónActual = (Point)PosiciónActual;
             Direction dirección = (Direction)Dirección;
-            var culebrita = new ColaCircular();
+            var culebrita = new ColaLineal();
             culebrita.insertar(posiciónActual);
 
             DibujaPantalla(tamañoPantalla);
@@ -117,3 +115,4 @@ namespace Snake_Dayana_Erickson.Clases.GameSnake
         }// end GamePrincipal
     }
 }
+

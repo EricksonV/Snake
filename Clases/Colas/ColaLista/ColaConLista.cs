@@ -74,6 +74,33 @@ namespace Colas.Clases.ColaLista
             }
             return (frente.elemento);
         }
+        public object finalCola()
+        {
+            if (colaVacia())
+            {
+                throw new Exception("Error la cola está Vacía");
+            }
+            return (fin.elemento);
+        }
+        public int numElementosCola()
+        {
+            int n;
+            Nodo a = frente;
+            if (colaVacia())
+            {
+                n = 0;
+            }
+            else
+            {
+                n = 1;
+                while (a != fin)
+                {
+                    n++;
+                    a = a.Siguiente;
+                }
+            }
+            return n;
+        }
         public bool any(Point x)
         {
             int cont = 0;

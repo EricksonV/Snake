@@ -12,12 +12,13 @@ namespace Colas.Clases.ColaArreglo
         protected int fin;
         private static int MAXTAMQ = 39;
         protected int frente;
+        private int tam;
 
         protected Object[] listaCola;
 
         public ColaLineal()
         {
-            frente = 0;
+            frente = tam = 0;
             fin = -1;
             listaCola = new Object[MAXTAMQ];
         }
@@ -28,7 +29,7 @@ namespace Colas.Clases.ColaArreglo
             if (!colaLlena())
             {
                 listaCola[++fin] = elemento;
-
+                tam++;
             }
             else
             {
@@ -50,6 +51,7 @@ namespace Colas.Clases.ColaArreglo
             if (!colaVacia())
             {
                 return listaCola[frente++];
+                tam--;
             }
             else
             {
@@ -60,7 +62,7 @@ namespace Colas.Clases.ColaArreglo
         //limpiar toda la cola
         public void borrarCola()
         {
-            frente = 0;
+            frente = tam = 0;
             fin = -1;
         }
 
@@ -75,6 +77,21 @@ namespace Colas.Clases.ColaArreglo
             {
                 throw new Exception("Cola Vacía");
             }
+        }
+        public Object finCola()
+        {
+            if (!colaVacia())
+            {
+                return listaCola[fin];
+            }
+            else
+            {
+                throw new Exception("Cola Vacía");
+            }
+        }
+        public int cont()
+        {
+            return tam;
         }
 
         public bool Any(Point x)

@@ -72,7 +72,7 @@ namespace Snake_Dayana_Erickson.Clases.GameSnake
 
             return lugarComida;
         }//end MostrarComida
-        public void Game()
+        public int Game()
         {
             int punteo = (int) Punteo;
             int velocidad = (int)Velocidad;
@@ -96,7 +96,7 @@ namespace Snake_Dayana_Erickson.Clases.GameSnake
                 if (posiciónActual.Equals(posiciónComida))
                 {
                     posiciónComida = Point.Empty;
-                    longitudCulebra += 10; //modificar estos valores y ver qué pasa
+                    longitudCulebra ++; //modificar estos valores y ver qué pasa
                     punteo += 10; //modificar estos valores y ver qué pasa
                     MuestraPunteo(punteo);
                 }
@@ -113,6 +113,7 @@ namespace Snake_Dayana_Erickson.Clases.GameSnake
             Console.Write("Fin del Juego");
             Thread.Sleep(2000);
             Console.ReadKey();
+            return punteo;
         }// end GamePrincipal
     }
 }

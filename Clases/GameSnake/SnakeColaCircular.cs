@@ -52,7 +52,7 @@ namespace Snake_Dayana_Erickson.Clases.GameSnake
         private Point MostrarComida(Size screenSize, ColaCircular culebra)
         {
             var lugarComida = Point.Empty;
-            var cabezaCulebra = (Point)culebra.finalCola(); //obtenemos la posicion de la cabeza de la serpiente
+            var cabezaCulebra = (Point)culebra.frenteCola(); //obtenemos la posicion de la cabeza de la serpiente
             var rnd = new Random();
             do
             {
@@ -72,7 +72,7 @@ namespace Snake_Dayana_Erickson.Clases.GameSnake
 
             return lugarComida;
         }//end MostrarComida
-        public void Game()
+        public int Game()
         {
             int punteo = (int)Punteo;
             int velocidad = (int)Velocidad;
@@ -96,7 +96,7 @@ namespace Snake_Dayana_Erickson.Clases.GameSnake
                 if (posiciónActual.Equals(posiciónComida))
                 {
                     posiciónComida = Point.Empty;
-                    longitudCulebra += 10; //modificar estos valores y ver qué pasa
+                    longitudCulebra++; //modificar estos valores y ver qué pasa
                     punteo += 10; //modificar estos valores y ver qué pasa
                     MuestraPunteo(punteo);
                 }
@@ -108,11 +108,13 @@ namespace Snake_Dayana_Erickson.Clases.GameSnake
 
             }
 
+
             Console.ResetColor();
             Console.SetCursorPosition(tamañoPantalla.Width / 2 - 4, tamañoPantalla.Height / 2);
             Console.Write("Fin del Juego");
             Thread.Sleep(2000);
             Console.ReadKey();
+            return punteo;
         }// end GamePrincipal
     }
 }
