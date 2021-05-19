@@ -1,4 +1,5 @@
 ﻿using Snake_Dayana_Erickson.Clases.GameSnake;
+using Snake_Dayana_Erickson.Clases.ManejodeArchivos;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -15,14 +16,24 @@ namespace Snake_Dayana_Erickson.Clases.GameMenu
             bool end = false;
             Size size = new Size(60, 20);
             new clsGame().DibujaPantalla(size);
-            //do
-            //{
-            //} while (flag == true);
             do
             {
                 int op1 = seleccion(1,2);
-                int op2 = seleccion(2,2);
-                int op3 = seleccion(3, 4);
+                switch (op1)
+                {
+                    case 0:
+                        int op2 = seleccion(2, 2);
+                        SwitchMenu2(op2);
+                        break;
+                    case 1:
+                        MuestraTabla();
+                        Console.ReadKey();
+                        break;
+                    case 2:
+                        end = true;
+                        break;
+                }
+                
                 //Juega(op2);
             } while (end == false);
 
@@ -56,6 +67,51 @@ namespace Snake_Dayana_Erickson.Clases.GameMenu
                 }//end switch
             }//end while
             return i;
+        }
+        public void SwitchMenu2(int op2)
+        {
+            int op3;
+            switch (op2)
+            {
+                case 0:
+                    op3 = seleccion(3, 4);
+                    SwitchMenu3(op3);
+                    break;
+                case 1:
+                    op3 = seleccion(3, 4);
+                    SwitchMenu3(op3);
+                    break;
+                case 2:
+                    op3 = seleccion(3, 4);
+                    SwitchMenu3(op3);
+                    break;
+            }
+        }
+        public void SwitchMenu3(int op3)
+        {
+            switch (op3)
+            {
+                case 0:
+                    Console.WriteLine("Bicola");
+                    Console.ReadKey();
+                    break;
+                case 1:
+                    Console.WriteLine("circular");
+                    Console.ReadKey();
+                    break;
+                case 2:
+                    Console.WriteLine("circular v2");
+                    Console.ReadKey();
+                    break;
+                case 3:
+                    Console.WriteLine("Con lista");
+                    Console.ReadKey();
+                    break;
+                case 4:
+                    Console.WriteLine("Lineal");
+                    Console.ReadKey();
+                    break;
+            }
         }
 
         public void menu1(int i)
@@ -136,6 +192,11 @@ namespace Snake_Dayana_Erickson.Clases.GameMenu
                     break;
             }
             Console.ReadKey();
+        }
+
+        public void MuestraTabla()
+        {
+            new ClsArchivos().MuestraNombres();
         }
     }
 }
