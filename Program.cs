@@ -1,5 +1,6 @@
 ﻿using Colas.Clases.BicolaEnlazada;
 using Colas.Clases.ColaArreglo;
+using Snake_Dayana_Erickson.Clases.GameMenu;
 using Snake_Dayana_Erickson.Clases.GameSnake;
 using System;
 using System.Drawing;
@@ -10,8 +11,7 @@ namespace Snake_Dayana_Erickson
     {
         static void Main(string[] args)
         {
-
-
+            new ClsMenuPrincipal().menuPrincipal();
         }
     }
 }
