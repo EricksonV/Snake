@@ -85,10 +85,10 @@ namespace Colas.Clases.ColaArreglo
             {
                 Point a = (Point)listaCola[i];
                 flag = ((a.X == x.X) && (a.Y == x.Y));
-                int z = (flag == true) ? cont + 0 : cont++;
+                int z = (flag == true) ? cont ++: cont+0;
                 i++;
             }
-            return (cont == 0) ? true : false;
+            return (cont != 0) ? true : false;
         }
 
         public bool All(int x, int y)

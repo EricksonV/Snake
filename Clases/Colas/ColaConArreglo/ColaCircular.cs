@@ -12,12 +12,13 @@ namespace Colas.Clases.ColaArreglo
         protected int fin;
         private static int MAXTAMQ = 99;
         protected int frente;
+        private int tam;
 
         public Object[] listaCola;
 
         public ColaCircular()
         {
-            frente = 0;
+            frente = tam = 0;
             fin = MAXTAMQ - 1;
             listaCola = new Object[MAXTAMQ];
         }
@@ -45,6 +46,7 @@ namespace Colas.Clases.ColaArreglo
             {
                 fin = siguiente(fin);
                 listaCola[fin] = elemento;
+                tam++;
             }
             else
             {
@@ -59,6 +61,26 @@ namespace Colas.Clases.ColaArreglo
             {
                 Object tm = listaCola[frente];
                 frente = siguiente(frente);
+                tam--;
+                return tm;
+            }
+            else
+            {
+                throw new Exception("Cola Vacía");
+            }
+        }
+        public Object quitar2()
+        {
+            if (!colaVacia())
+            {
+                object tm= listaCola[frente];
+                Object[] list2 = listaCola;
+                for(int i=1; i<list2.Length; i++)
+                {
+                    listaCola[i - 1] = list2[i]; 
+                }
+                frente = 0;
+                fin--;
                 return tm;
             }
             else
@@ -69,7 +91,7 @@ namespace Colas.Clases.ColaArreglo
 
         public void BorrarCola()
         {
-            frente = 0;
+            frente = tam = 0;
             fin = MAXTAMQ - 1;
         }
 
@@ -85,6 +107,21 @@ namespace Colas.Clases.ColaArreglo
                 throw new Exception("Cola Vacía");
             }
         }
+        public Object finalCola()
+        {
+            if (!colaVacia())
+            {
+                return listaCola[fin];
+            }
+            else
+            {
+                throw new Exception("Cola Vacía");
+            }
+        }
+        public int cont()
+        {
+            return tam;
+        }
         public bool Any(Point x)
         {
             int i = 0, cont = 0;
@@ -93,10 +130,10 @@ namespace Colas.Clases.ColaArreglo
             {
                 Point a = (Point)listaCola[i];
                 flag = ((a.X == x.X) && (a.Y == x.Y));
-                int z = (flag == true) ? cont+0 : cont++;
+                int z = (flag == true) ? cont++ : cont+0;
                 i++;
             }
-            return (cont == 0) ? true : false;
+            return (cont != 0) ? true : false;
         }
 
         public bool all(int x, int y)

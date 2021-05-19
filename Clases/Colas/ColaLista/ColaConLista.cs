@@ -78,14 +78,13 @@ namespace Colas.Clases.ColaLista
         {
             int cont = 0;
             bool flag;
-            Point a;
             Nodo aux = frente; //Se guardan los datos en un nodo auxiliar
             while (aux != null)
             {
                 
-                a = (Point)aux.elemento; //se convierte el elemento a tipo Point
-                flag = ((a.X == x.X) && (a.Y == x.Y)); //compara que la posicion sea igual a la que ocupa la serpiente
-                int z = (flag == true ? cont++ : cont+0); //comparación que no hayan datos repetidos
+                Point a = (Point)aux.elemento; //se convierte el elemento a tipo Point
+                flag = ((a.X == x.X) && (a.Y == x.Y)); //compara que la posicicion de la cabeza no esté en el cuerpo de la serpiente
+                int z = (flag == true ? cont++ : cont+0); //comparación que haya por lo menos un dato repetido
                 aux = aux.Siguiente; //avanza al siguiente nodo
             }
 

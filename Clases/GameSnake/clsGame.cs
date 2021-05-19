@@ -107,6 +107,5 @@ namespace Snake_Dayana_Erickson.Clases.GameSnake
             return siguienteDireccion;
         }// end ObtieneSiguienteDireccion
 
-
     }
 }
