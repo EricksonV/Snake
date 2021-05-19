@@ -95,7 +95,7 @@ namespace Snake_Dayana_Erickson.Clases.ManejodeArchivos
                 }
             }
 
-            for(int i =0;i <puntos.Length; i++) //MOSTRAR LOS DATOS
+            for(int i =0;i <9; i++) //MOSTRAR LOS mejores 10 datos
             {
                 Console.WriteLine($"{i+1}. Nombre: {nombresordenados[i]}, Puntos: {puntos[i]}, Dificultad: {dificultadordenada[i]}");
             }
