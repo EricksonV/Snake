@@ -92,7 +92,7 @@ namespace Colas.Clases.ColaArreglo
             while (i <= fin)
             {
                 Point a = (Point)listaCola[i];
-                flag = ((a.X != x.X) && (a.Y != x.Y));
+                flag = ((a.X == x.X) && (a.Y == x.Y));
                 int z = (flag == true) ? cont+0 : cont++;
                 i++;
             }

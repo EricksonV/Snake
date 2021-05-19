@@ -9,6 +9,22 @@ namespace Snake_Dayana_Erickson.Clases.GameSnake
 {
     class clsGame
     {
+        private object punteo = 0;
+        private object velocidad = 100; //modificar estos valores y ver qué pasa
+        private object posiciónComida = Point.Empty;
+        private object tamañoPantalla = new Size(60, 20);
+        private object longitudCulebra = 3; //modificar estos valores y ver qué pasa
+        private object posiciónActual = new Point(20, 9); //modificar estos valores y ver qué pasa
+        private object dirección = Direction.Derecha; //modificar estos valores y ver qué pasa
+
+        public object Punteo { get => punteo; }
+        public object Velocidad { get => velocidad; }
+        public object PosiciónComida { get => posiciónComida; }
+        public object TamañoPantalla { get => tamañoPantalla;}
+        public object LongitudCulebra { get => longitudCulebra; }
+        public object PosiciónActual { get => posiciónActual; }
+        public object Dirección { get => dirección;}
+
         internal enum Direction
         {
             Abajo, Izquierda, Derecha, Arriba
@@ -91,20 +107,6 @@ namespace Snake_Dayana_Erickson.Clases.GameSnake
             return siguienteDireccion;
         }// end ObtieneSiguienteDireccion
 
-        public void DeclaraciondeVariables()
-        {
-            var punteo = 0;
-            var velocidad = 100; //modificar estos valores y ver qué pasa
-            var posiciónComida = Point.Empty;
-            var tamañoPantalla = new Size(60, 20);
-            var culebrita = new Queue<Point>();
-            var longitudCulebra = 3; //modificar estos valores y ver qué pasa
-            var posiciónActual = new Point(20, 9); //modificar estos valores y ver qué pasa
-            culebrita.Enqueue(posiciónActual);
-            var dirección = Direction.Derecha; //modificar estos valores y ver qué pasa
 
-            DibujaPantalla(tamañoPantalla);
-            MuestraPunteo(punteo);
-        }
     }
 }

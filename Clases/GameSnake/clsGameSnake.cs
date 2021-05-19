@@ -177,7 +177,7 @@ namespace Snake_Dayana_Erickson.Clases.GameSnake
                 if (posiciónActual.Equals(posiciónComida))
                 {
                     posiciónComida = Point.Empty;
-                    longitudCulebra++; //modificar estos valores y ver qué pasa
+                    longitudCulebra += 10; //modificar estos valores y ver qué pasa
                     punteo += 10; //modificar estos valores y ver qué pasa
                     MuestraPunteo(punteo);
                 }

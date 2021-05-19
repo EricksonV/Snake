@@ -84,12 +84,12 @@ namespace Colas.Clases.ColaLista
             {
                 
                 a = (Point)aux.elemento; //se convierte el elemento a tipo Point
-                flag = ((a.X != x.X) && (a.Y != x.Y)); //compara que la posicion sea distinta a la que ocupa la serpiente
-                int z = (flag == true ? cont+0 : cont++); //comparación que no hayan datos repetidos
+                flag = ((a.X == x.X) && (a.Y == x.Y)); //compara que la posicion sea igual a la que ocupa la serpiente
+                int z = (flag == true ? cont++ : cont+0); //comparación que no hayan datos repetidos
                 aux = aux.Siguiente; //avanza al siguiente nodo
             }
 
-            return (cont == 0) ? true : false;
+            return (cont != 0) ? true : false;
         }
 
         public bool all(int x, int y)
@@ -102,7 +102,7 @@ namespace Colas.Clases.ColaLista
             {
 
                 a = (Point)aux.elemento; //se convierte el elemento a tipo Point
-                flag = (a.X != x || a.Y != y);
+                flag = (a.X != x && a.Y != y);
                 int z = (flag == true ? cont + 0 : cont++); //comparación que no hayan datos repetidos
                 aux = aux.Siguiente; //avanza al siguiente nodo
             }

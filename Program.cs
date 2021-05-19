@@ -10,8 +10,8 @@ namespace Snake_Dayana_Erickson
     {
         static void Main(string[] args)
         {
-            //new clsGameSnake().Game();
             new SnakeBicola().Game();
+            //new clsGameSnake().Game();
         }
     }
 }

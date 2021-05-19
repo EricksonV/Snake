@@ -18,14 +18,15 @@ namespace Snake_Dayana_Erickson.Clases.GameSnake
             var lastPoint = (Point)culebra.finalBicola(); //Obtenemos el fin de la cola
 
             if (lastPoint.Equals(posiciónObjetivo)) return true;
+            
+            else if (culebra.any(posiciónObjetivo)) return false;
 
-            if (culebra.any(posiciónObjetivo)) return false;
-
-            if (posiciónObjetivo.X < 0 || posiciónObjetivo.X >= screenSize.Width
+            else if (posiciónObjetivo.X < 0 || posiciónObjetivo.X >= screenSize.Width
                     || posiciónObjetivo.Y < 0 || posiciónObjetivo.Y >= screenSize.Height)
             {
                 return false;
             }
+            
 
             Console.BackgroundColor = ConsoleColor.Green;
             Console.SetCursorPosition(lastPoint.X + 1, lastPoint.Y + 1);
@@ -40,7 +41,7 @@ namespace Snake_Dayana_Erickson.Clases.GameSnake
             // Quitar cola
             if (culebra.numElementosBicola() > longitudCulebra)
             {
-                var removePoint = (Point)culebra.quitarFrente(); //quitamos la cabeza para que se corra una posición
+                var removePoint = (Point)culebra.quitar(); 
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.SetCursorPosition(removePoint.X + 1, removePoint.Y + 1);
                 Console.Write(" ");
@@ -73,15 +74,15 @@ namespace Snake_Dayana_Erickson.Clases.GameSnake
         }//end MostrarComida
         public void Game()
         {
-            var punteo = 0;
-            var velocidad = 100; //modificar estos valores y ver qué pasa
-            var posiciónComida = Point.Empty;
-            var tamañoPantalla = new Size(60, 20);
+            int punteo = (int) Punteo;
+            int velocidad = (int)Velocidad;
+            Point posiciónComida = (Point)PosiciónComida;
+            Size tamañoPantalla = (Size)TamañoPantalla;
+            int longitudCulebra = (int)LongitudCulebra;
+            Point posiciónActual = (Point)PosiciónActual;
+            Direction dirección = (Direction)Dirección;
             var culebrita = new Bicola();
-            var longitudCulebra = 3; //modificar estos valores y ver qué pasa
-            var posiciónActual = new Point(0, 9); //modificar estos valores y ver qué pasa
             culebrita.insertar(posiciónActual);
-            var dirección = Direction.Derecha; //modificar estos valores y ver qué pasa
 
             DibujaPantalla(tamañoPantalla);
             MuestraPunteo(punteo);
@@ -95,7 +96,7 @@ namespace Snake_Dayana_Erickson.Clases.GameSnake
                 if (posiciónActual.Equals(posiciónComida))
                 {
                     posiciónComida = Point.Empty;
-                    longitudCulebra++; //modificar estos valores y ver qué pasa
+                    longitudCulebra += 10; //modificar estos valores y ver qué pasa
                     punteo += 10; //modificar estos valores y ver qué pasa
                     MuestraPunteo(punteo);
                 }
@@ -104,6 +105,7 @@ namespace Snake_Dayana_Erickson.Clases.GameSnake
                 {
                     posiciónComida = MostrarComida(tamañoPantalla, culebrita);
                 }
+
             }
 
             Console.ResetColor();
