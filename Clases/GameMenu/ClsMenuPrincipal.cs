@@ -94,41 +94,44 @@ namespace Snake_Dayana_Erickson.Clases.GameMenu
             else if (v == 1) { velocidad = 100; }
             else { velocidad = 70; }
 
+            Console.Clear();
             Console.SetCursorPosition(15, 14);
             Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Para Almacenar sus puntos");
             Console.Write("INGRESE SU NOMBRE:  ");
             Console.ForegroundColor = ConsoleColor.Red;
             string name = Console.ReadLine();
-            int puntos;
+            int puntos = 0;
             
             switch (op3)
             {
                 case 0:
                     SnakeBicola obj1 = new SnakeBicola();
                     obj1.Velocidad = velocidad;
-                    obj1.Game();
+                    puntos = obj1.Game();
                     break;
                 case 1:
                     SnakeColaCircular circular = new SnakeColaCircular();
                     circular.Velocidad = velocidad;
-                    circular.Game();
+                    puntos = circular.Game();
                     break;
                 case 2:
                     SnakeColaCircularV2 circularV2 = new SnakeColaCircularV2();
                     circularV2.Velocidad = velocidad;
-                    circularV2.Game();
+                    puntos = circularV2.Game();
                     break;
                 case 3:
                     SnakeColaConLista list = new SnakeColaConLista();
                     list.Velocidad = velocidad;
-                    list.Game();
+                    puntos = list.Game();
                     break;
                 case 4:
                     SnakeColaLineal lineal = new SnakeColaLineal();
                     lineal.Velocidad = velocidad;
-                    lineal.Game();
+                    puntos = lineal.Game();
                     break;
             }
+            new ClsArchivos().GuardaNombres(name, puntos, v);
         }
 
         public void menu1(int i)
@@ -192,23 +195,6 @@ namespace Snake_Dayana_Erickson.Clases.GameMenu
             Console.SetCursorPosition(18, 14);
             Console.ForegroundColor = (i == 4) ? ConsoleColor.Red : ConsoleColor.White;
             Console.WriteLine("5. Cola Lineal");
-        }
-
-        public void Juega(int i)
-        {
-            switch (i)
-            {
-                case 0:
-                    Console.WriteLine("Eligio Fácil");
-                    break;
-                case 1:
-                    Console.WriteLine("Eligio Dificil");
-                    break;
-                case 2:
-                    Console.WriteLine("Eligio Legendario");
-                    break;
-            }
-            Console.ReadKey();
         }
 
         public void MuestraTabla()
