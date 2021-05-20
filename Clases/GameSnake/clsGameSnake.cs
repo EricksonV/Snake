@@ -161,7 +161,7 @@ namespace Snake_Dayana_Erickson.Clases.GameSnake
             var tamañoPantalla = new Size(60, 20);
             var culebrita = new Queue<Point>();
             var longitudCulebra = 3; //modificar estos valores y ver qué pasa
-            var posiciónActual = new Point(20, 9); //modificar estos valores y ver qué pasa
+            var posiciónActual = new Point(0, 9); //modificar estos valores y ver qué pasa
             culebrita.Enqueue(posiciónActual);
             var dirección = Direction.Derecha; //modificar estos valores y ver qué pasa
 
