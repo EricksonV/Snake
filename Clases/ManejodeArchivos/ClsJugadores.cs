@@ -30,13 +30,9 @@ namespace Snake_Dayana_Erickson.Clases.ManejodeArchivos
         public bool Equals(ClsJugadores obj)
         {
             if (obj == null) { return false; }
-            ClsJugadores objs = obj as ClsJugadores;
+            ClsJugadores objs = obj;
             if (objs == null) { return false; }
             else return Equals(objs);
-        }
-        public override int GetHashCode()
-        {
-            return punteo;
         }
     }
 }

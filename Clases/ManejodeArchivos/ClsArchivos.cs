@@ -29,19 +29,20 @@ namespace Snake_Dayana_Erickson.Clases.ManejodeArchivos
                 archivo = new StreamReader(@"Punteos.txt",UTF8Encoding.UTF8);
                 string tem = archivo.ReadToEnd();
                 string[] temp2 = tem.Split(Environment.NewLine);
-                int i = 0;
-                string[] nombres = new string[temp2.Length-1];
-                int[] punteos = new int[temp2.Length - 1];
-                string[] dificultad = new string[temp2.Length - 1];
+
+                List<ClsJugadores> jugadores = new List<ClsJugadores>();
+
                 foreach (string linea in temp2)
                 {
                     string[] CadaEspacio = linea.Split(';');
                     if(CadaEspacio.Length > 1)
                     {
-                        nombres[i] = CadaEspacio[0];
-                        punteos[i] = int.Parse(CadaEspacio[1]);
-                        dificultad[i] = CadaEspacio[2];
-                        i++;
+                        jugadores.Add(new ClsJugadores()
+                        {
+                            Nombre = CadaEspacio[0],
+                            Punteo = int.Parse(CadaEspacio[1]),
+                            Dificultad = CadaEspacio[2]
+                        });
                     }
                     
                 }
@@ -52,9 +53,8 @@ namespace Snake_Dayana_Erickson.Clases.ManejodeArchivos
                 Console.WriteLine("TOP 10 JUGADORES CON MÁS PUNTOS");
                 Console.SetCursorPosition(0, 5);
                 Console.ForegroundColor = ConsoleColor.White;
-                OrdenamientoDeDatos(nombres, punteos, dificultad);
-                Console.WriteLine();
-                Console.WriteLine("PRESIONE CUALQUIER TECLA PARA CONTINUAR");
+                OrdenamientoDeDatos(jugadores);
+                Console.WriteLine("\nPRESIONE CUALQUIER TECLA PARA CONTINUAR");
             }
             catch(Exception ex)
             {
@@ -62,13 +62,7 @@ namespace Snake_Dayana_Erickson.Clases.ManejodeArchivos
             }
 
         }
-        public void OrdenamientoDeDatos(string[] names, int[] puntos, string[] dificulta) {
-            List<ClsJugadores> jugadores = new List<ClsJugadores>();
-            for(int i = 0; i<puntos.Length; i++) //guardamos los datos de punteos en un vector temporal
-            {
-                jugadores.Add(new ClsJugadores() {
-                    Nombre = names[i], Punteo = puntos[i], Dificultad = dificulta[i] });
-            }
+        public void OrdenamientoDeDatos(List<ClsJugadores> jugadores) {
 
             jugadores.Sort();
             int cont = 1;
