@@ -11,7 +11,7 @@ namespace Snake_Dayana_Erickson
     {
         static void Main(string[] args)
         {
-            new ClsMenuPrincipal().menuPrincipal();
+           new ClsMenuPrincipal().menuPrincipal();
         }
     }
 }

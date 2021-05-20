@@ -1,4 +1,4 @@
-Erickson;190;Fácil
-David;10;Legendario
-EricksonV;40;Legendario
-Jazmin;180;Legendario
+Erickson;240;Legendario
+David;180;Fácil
+Erick;240;Difícil
+DV;120;Fácil

@@ -79,7 +79,7 @@ namespace Colas.Clases.ColaArreglo
                 {
                     listaCola[i - 1] = list2[i]; 
                 }
-                frente = 0;
+                frente=0;
                 fin--;
                 return tm;
             }

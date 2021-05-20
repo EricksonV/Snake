@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Colas.Clases.BicolaEnlazada;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -60,46 +61,23 @@ namespace Snake_Dayana_Erickson.Clases.ManejodeArchivos
 
         }
         public void ordenamientoBurbuja(string[] names, int[] puntos, string[] dificulta) {
-            int t;
-            string[] nombresordenados = new string[names.Length];
-            string[] dificultadordenada = new string[dificulta.Length];
-            int[] temp = new int[puntos.Length];
-
-            for(int i = 0; i<temp.Length; i++) //guardamos los datos de punteos en un vector temporal
+            List<ClsJugadores> jugadores = new List<ClsJugadores>();
+            for(int i = 0; i<puntos.Length; i++) //guardamos los datos de punteos en un vector temporal
             {
-                temp[i] = puntos[i];
+                jugadores.Add(new ClsJugadores() {
+                    Nombre = names[i], Punteo = puntos[i], Dificultad = dificulta[i] });
             }
 
-            for(int a = 1; a<puntos.Length; a++) //ORDENAMIENTO BURBUJA
+            List<ClsJugadores> jugadoresordenados = jugadores.OrderBy(x => x).ToList();
+
+            int cont = 0;
+            foreach(ClsJugadores ss in jugadoresordenados)
             {
-                for(int b= puntos.Length-1 ; b >= a; b--)
+                if (cont < 4)
                 {
-                    if (puntos[b - 1] < puntos[b])
-                    {
-                        t = puntos[b - 1];
-                        puntos[b - 1] = puntos[b];
-                        puntos[b] = t;
-                    }
+                    Console.WriteLine(ss);
                 }
             }
-
-            for(int i =0; i<temp.Length; i++) //ORDENAR LOS NOMBRES Y LA DIFICULTAD
-            {
-                for(int j = 0; j <puntos.Length; j++)
-                {
-                    if (temp[i] == puntos[j])
-                    {
-                        nombresordenados[i] = names[j];
-                        dificultadordenada[i] = dificulta[j];
-                    }
-                }
-            }
-
-            for(int i =0;i <9; i++) //MOSTRAR LOS mejores 10 datos
-            {
-                Console.WriteLine($"{i+1}. Nombre: {nombresordenados[i]}, Puntos: {puntos[i]}, Dificultad: {dificultadordenada[i]}");
-            }
-            Console.WriteLine("Presione Cualquier tecla");
         }
     }
 }
