@@ -50,9 +50,11 @@ namespace Snake_Dayana_Erickson.Clases.ManejodeArchivos
                 Console.SetCursorPosition(15, 1);
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("TOP 10 JUGADORES CON MÁS PUNTOS");
-                Console.SetCursorPosition(0, 3);
+                Console.SetCursorPosition(0, 5);
                 Console.ForegroundColor = ConsoleColor.White;
-                ordenamientoBurbuja(nombres, punteos, dificultad);
+                OrdenamientoDeDatos(nombres, punteos, dificultad);
+                Console.WriteLine();
+                Console.WriteLine("PRESIONE CUALQUIER TECLA PARA CONTINUAR");
             }
             catch(Exception ex)
             {
@@ -60,7 +62,7 @@ namespace Snake_Dayana_Erickson.Clases.ManejodeArchivos
             }
 
         }
-        public void ordenamientoBurbuja(string[] names, int[] puntos, string[] dificulta) {
+        public void OrdenamientoDeDatos(string[] names, int[] puntos, string[] dificulta) {
             List<ClsJugadores> jugadores = new List<ClsJugadores>();
             for(int i = 0; i<puntos.Length; i++) //guardamos los datos de punteos en un vector temporal
             {
@@ -68,14 +70,13 @@ namespace Snake_Dayana_Erickson.Clases.ManejodeArchivos
                     Nombre = names[i], Punteo = puntos[i], Dificultad = dificulta[i] });
             }
 
-            List<ClsJugadores> jugadoresordenados = jugadores.OrderBy(x => x).ToList();
-
-            int cont = 0;
-            foreach(ClsJugadores ss in jugadoresordenados)
+            jugadores.Sort();
+            int cont = 1;
+            foreach(ClsJugadores ss in jugadores)
             {
-                if (cont < 4)
+                if (cont <= 10)
                 {
-                    Console.WriteLine(ss);
+                    Console.WriteLine($"{cont++}.{ss}");
                 }
             }
         }

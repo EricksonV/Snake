@@ -1,4 +1,12 @@
 Erickson;240;Legendario
 David;180;Fácil
 Erick;240;Difícil
-DV;120;Fácil
+Villa;560;Difícil
+DVilla;20;Fácil
+EVi;60;Fácil
+Jazmin;120;Legendario
+Lorena;120;Fácil
+Kendy;80;Fácil
+Rafael;320;Fácil
+FFFFFF;150;Fácil
+ssssss;100;Fácil
