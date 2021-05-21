@@ -1,4 +1,5 @@
 ﻿using Colas.Clases.BicolaEnlazada;
+using Snake_Dayana_Erickson.Clases.GameMenu;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -19,9 +20,9 @@ namespace Snake_Dayana_Erickson.Clases.GameSnake
 
             if (lastPoint.Equals(posiciónObjetivo)) return true;
             
-            else if (culebra.any(posiciónObjetivo)) return false;
+            if (culebra.any(posiciónObjetivo)) return false;
 
-            else if (posiciónObjetivo.X < 0 || posiciónObjetivo.X >= screenSize.Width
+            if (posiciónObjetivo.X < 0 || posiciónObjetivo.X >= screenSize.Width
                     || posiciónObjetivo.Y < 0 || posiciónObjetivo.Y >= screenSize.Height)
             {
                 return false;
@@ -84,6 +85,7 @@ namespace Snake_Dayana_Erickson.Clases.GameSnake
             var culebrita = new Bicola();
             culebrita.insertar(posiciónActual);
 
+            
             DibujaPantalla(tamañoPantalla);
             MuestraPunteo(punteo);
 
@@ -94,11 +96,13 @@ namespace Snake_Dayana_Erickson.Clases.GameSnake
                 posiciónActual = ObtieneSiguienteDireccion(dirección, posiciónActual);
 
                 if (posiciónActual.Equals(posiciónComida))
-                {
+                {                  
                     posiciónComida = Point.Empty;
                     longitudCulebra ++; //modificar estos valores y ver qué pasa
-                    punteo += 10; //modificar estos valores y ver qué pasa
+                    punteo++; //modificar estos valores y ver qué pasa
                     MuestraPunteo(punteo);
+                    velocidad -= defineVelocidad(punteo);
+                    new ClsSonido().Reproducir();
                 }
 
                 if (posiciónComida == Point.Empty) //entender qué hace esta linea
@@ -114,6 +118,6 @@ namespace Snake_Dayana_Erickson.Clases.GameSnake
             Thread.Sleep(2000);
             Console.ReadKey();
             return punteo;
-        }// end GamePrincipal
+        }// end GamePrincipal      
     }
 }

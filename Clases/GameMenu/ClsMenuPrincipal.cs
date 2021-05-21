@@ -47,6 +47,7 @@ namespace Snake_Dayana_Erickson.Clases.GameMenu
             {
                 i = (i == tam+1) ? 0 : i;
                 i = (i == -1) ? tam : i;
+
                 if (opc == 1) { Console.Clear(); menu1(i); }
                 if (opc == 2) { Console.Clear(); menu2(i); }
                 if (opc == 3){ Console.Clear(); menu3(i); }
@@ -90,9 +91,9 @@ namespace Snake_Dayana_Erickson.Clases.GameMenu
         public void SwitchMenu3(int op3, int v)
         {
             int velocidad;
-            if (v == 0) { velocidad = 125; }
-            else if (v == 1) { velocidad = 100; }
-            else { velocidad = 70; }
+            if (v == 0) { velocidad = 130; }
+            else if (v == 1) { velocidad = 110; }
+            else { velocidad = 90; }
 
             Console.Clear();
             Console.SetCursorPosition(15, 14);

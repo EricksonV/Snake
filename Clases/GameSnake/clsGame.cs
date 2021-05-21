@@ -107,5 +107,18 @@ namespace Snake_Dayana_Erickson.Clases.GameSnake
             return siguienteDireccion;
         }// end ObtieneSiguienteDireccion
 
+        public int defineVelocidad(int i)
+        {
+            if ((i % 50 == 0))
+            {
+                if (i >= 40)
+                {
+                    return 10;
+                }
+
+            }
+            return 0;
+        }
+
     }
 }

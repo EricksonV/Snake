@@ -1,4 +1,5 @@
 ﻿using Colas.Clases.ColaLista;
+using Snake_Dayana_Erickson.Clases.GameMenu;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -94,9 +95,11 @@ namespace Snake_Dayana_Erickson.Clases.GameSnake
                 if (posiciónActual.Equals(posiciónComida))
                 {
                     posiciónComida = Point.Empty;
-                    longitudCulebra += 10; //modificar estos valores y ver qué pasa
+                    longitudCulebra ++; //modificar estos valores y ver qué pasa
                     punteo += 10; //modificar estos valores y ver qué pasa
                     MuestraPunteo(punteo);
+                    velocidad -= defineVelocidad(punteo);
+                    new ClsSonido().Reproducir();
                 }
 
                 if (posiciónComida == Point.Empty) //entender qué hace esta linea
