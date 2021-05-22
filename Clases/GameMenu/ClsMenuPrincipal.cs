@@ -27,6 +27,7 @@ namespace Snake_Dayana_Erickson.Clases.GameMenu
                         break;
                     case 1:
                         MuestraTabla();
+                        new ClsSonido().Reproducir(5);
                         Console.ReadKey();
                         break;
                     case 2:
@@ -58,12 +59,15 @@ namespace Snake_Dayana_Erickson.Clases.GameMenu
                 {
                     case ConsoleKey.UpArrow:
                         i--;
+                        new ClsSonido().Reproducir(2);
                         break;
                     case ConsoleKey.DownArrow:
                         i++;
+                        new ClsSonido().Reproducir(2);
                         break;
                     case ConsoleKey.Enter:
                         flag = true;
+                        new ClsSonido().Reproducir(3);
                         break;
                 }//end switch
             }//end while
@@ -96,12 +100,13 @@ namespace Snake_Dayana_Erickson.Clases.GameMenu
             else { velocidad = 90; }
 
             Console.Clear();
-            Console.SetCursorPosition(15, 14);
+            Console.SetCursorPosition(15, 9);
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Para Almacenar sus puntos");
             Console.Write("INGRESE SU NOMBRE:  ");
             Console.ForegroundColor = ConsoleColor.Red;
             string name = Console.ReadLine();
+            new ClsSonido().Reproducir(3);
             int puntos = 0;
             
             switch (op3)

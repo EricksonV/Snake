@@ -31,7 +31,7 @@ namespace Snake_Dayana_Erickson.Clases.GameSnake
         }
         public void DibujaPantalla(Size size)
         {
-            Console.Title = "Culebrita comelona";
+            Console.Title = "SNAKE DAYANA Y ERICKSON";
             Console.WindowHeight = size.Height + 2;
             Console.WindowWidth = size.Width + 2;
             Console.BufferHeight = Console.WindowHeight;

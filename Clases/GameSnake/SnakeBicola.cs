@@ -35,7 +35,7 @@ namespace Snake_Dayana_Erickson.Clases.GameSnake
 
             culebra.ponerFinal(posiciónObjetivo); //colocamos al final lo que se coma
 
-            Console.BackgroundColor = ConsoleColor.Red;
+            Console.BackgroundColor = ConsoleColor.Magenta;
             Console.SetCursorPosition(posiciónObjetivo.X + 1, posiciónObjetivo.Y + 1);
             Console.Write(" ");
 
@@ -67,7 +67,7 @@ namespace Snake_Dayana_Erickson.Clases.GameSnake
 
             } while (lugarComida == Point.Empty);
 
-            Console.BackgroundColor = ConsoleColor.Blue;
+            Console.BackgroundColor = ConsoleColor.Gray;
             Console.SetCursorPosition(lugarComida.X + 1, lugarComida.Y + 1);
             Console.Write(" ");
 
@@ -102,7 +102,7 @@ namespace Snake_Dayana_Erickson.Clases.GameSnake
                     punteo++; //modificar estos valores y ver qué pasa
                     MuestraPunteo(punteo);
                     velocidad -= defineVelocidad(punteo);
-                    new ClsSonido().Reproducir();
+                    new ClsSonido().Reproducir(1);
                 }
 
                 if (posiciónComida == Point.Empty) //entender qué hace esta linea
@@ -112,6 +112,7 @@ namespace Snake_Dayana_Erickson.Clases.GameSnake
 
             }
 
+            new ClsSonido().Reproducir(4);
             Console.ResetColor();
             Console.SetCursorPosition(tamañoPantalla.Width / 2 - 4, tamañoPantalla.Height / 2);
             Console.Write("Fin del Juego");
